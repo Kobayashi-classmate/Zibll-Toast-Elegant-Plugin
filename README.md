@@ -147,7 +147,7 @@ GPL v2 or later
 
 ## 👨‍💻 作者
 
-Your Name - [yourwebsite.com](https://yourwebsite.com)
+Kobayashi-classmate - [Zibll Toast Elegant Plugin](https://github.com/Kobayashi-classmate/Zibll-Toast-Elegant-Plugin)
 
 ## 🤝 贡献
 
@@ -181,9 +181,7 @@ A: 需要通过JavaScript调用，可以在模板中内联输出JS代码。
 ## 📧 支持
 
 如有问题或建议，请通过以下方式联系：
-- Email: your@email.com
-- GitHub: https://github.com/yourname/toast-elegant
-- WordPress支持论坛
+- GitHub: https://github.com/Kobayashi-classmate/Zibll-Toast-Elegant-Plugin/issues
 
 ---
 

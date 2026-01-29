@@ -3,7 +3,7 @@
  * Version: 2.0.0
  */
 
-(function(window) {
+(function (window) {
     'use strict';
 
     // 默认配置
@@ -32,27 +32,27 @@
             <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
             <path d="M8 12.5L10.5 15L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>`,
-        
+
         error: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
             <path d="M15 9L9 15M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>`,
-        
+
         warning: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L2 20h20L12 2z" fill="currentColor" opacity="0.2"/>
             <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>`,
-        
+
         info: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
             <path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>`,
-        
+
         loading: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.2"/>
             <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>`,
-        
+
         close: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>`
@@ -70,7 +70,7 @@
             this.startTime = null;
             this.remainingTime = this.options.duration;
             this.id = Date.now() + Math.random();
-            
+
             this.init();
         }
 
@@ -144,7 +144,7 @@
 
         show() {
             const container = this.getContainer();
-            
+
             // 检查最大数量限制
             const items = container.querySelectorAll('.toast-elegant-item');
             if (items.length >= this.options.maxToasts) {
@@ -194,13 +194,13 @@
 
         getContainer() {
             let container = document.querySelector(`.toast-elegant-container.${this.options.position}`);
-            
+
             if (!container) {
                 container = document.createElement('div');
                 container.className = `toast-elegant-container ${this.options.position}`;
                 document.body.appendChild(container);
             }
-            
+
             return container;
         }
 
@@ -239,7 +239,7 @@
                 const elapsed = Date.now() - this.startTime;
                 this.remainingTime = Math.max(0, this.remainingTime - elapsed);
                 this.startTime = null;
-                
+
                 if (this.timer) {
                     clearTimeout(this.timer);
                     this.timer = null;
@@ -261,7 +261,7 @@
 
             setTimeout(() => {
                 this.removeElement(this.element);
-                
+
                 if (typeof this.options.onClose === 'function') {
                     this.options.onClose();
                 }
@@ -318,7 +318,7 @@
     function compatNotyf(message, type, duration) {
         type = type === 'danger' ? 'error' : (type || 'success');
         duration = duration || 3000;
-        
+
         if (duration < 100) {
             duration *= 1000;
         }

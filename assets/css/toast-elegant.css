@@ -64,13 +64,13 @@
         right: 0 !important;
         transform: none !important;
     }
-    
+
     .toast-elegant-container.top-center,
     .toast-elegant-container.bottom-center {
         left: 0 !important;
         transform: none !important;
     }
-    
+
     .toast-elegant-item {
         min-width: auto;
         max-width: 100%;
@@ -293,7 +293,8 @@
     bottom: 0;
     left: 0;
     height: 3px;
-    width: 100%; /* 确保占满宽度 */
+    width: 100%;
+    /* 确保占满宽度 */
     background: rgba(255, 255, 255, 0.3);
     border-radius: 0 0 12px 12px;
     overflow: hidden;
@@ -341,6 +342,7 @@
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -352,6 +354,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -363,6 +366,7 @@
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-30px);
@@ -374,6 +378,7 @@
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(30px);
@@ -386,6 +391,7 @@
         opacity: 0;
         transform: scale(0.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -397,6 +403,7 @@
         opacity: 1;
         transform: scale(1);
     }
+
     to {
         opacity: 0;
         transform: scale(0.8);
@@ -409,13 +416,16 @@
         opacity: 0;
         transform: scale(0.3);
     }
+
     50% {
         opacity: 1;
         transform: scale(1.05);
     }
+
     70% {
         transform: scale(0.9);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -426,13 +436,16 @@
     0% {
         transform: scale(1);
     }
+
     25% {
         transform: scale(0.95);
     }
+
     50% {
         opacity: 1;
         transform: scale(1.1);
     }
+
     100% {
         opacity: 0;
         transform: scale(0.3);
@@ -445,16 +458,20 @@
         opacity: 0;
         transform: perspective(400px) rotateX(-90deg);
     }
+
     40% {
         transform: perspective(400px) rotateX(20deg);
     }
+
     60% {
         opacity: 1;
         transform: perspective(400px) rotateX(-10deg);
     }
+
     80% {
         transform: perspective(400px) rotateX(5deg);
     }
+
     to {
         opacity: 1;
         transform: perspective(400px) rotateX(0deg);
@@ -466,10 +483,12 @@
         opacity: 1;
         transform: perspective(400px) rotateX(0deg);
     }
+
     30% {
         transform: perspective(400px) rotateX(-20deg);
         opacity: 1;
     }
+
     to {
         opacity: 0;
         transform: perspective(400px) rotateX(90deg);
@@ -481,6 +500,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -496,11 +516,11 @@
         padding: 14px 16px;
         border-radius: 10px;
     }
-    
+
     .toast-elegant-message {
         font-size: 13px;
     }
-    
+
     .toast-elegant-icon {
         width: 20px;
         height: 20px;
@@ -514,9 +534,57 @@
         background: rgba(31, 41, 55, 0.95);
         color: #f3f4f6;
     }
-    
+
     .toast-elegant-content.style-solid {
         background: #1f2937;
         color: #f3f4f6;
     }
+}
+
+/* === 修复文字颜色可见性 === */
+
+/* 1. 确保在浅色背景风格（Glass, Solid, Outline）下文字为深灰色 */
+.toast-elegant-content.style-glass,
+.toast-elegant-content.style-solid,
+.toast-elegant-content.style-outline {
+    color: #374151 !important;
+    /* 强制深灰 */
+}
+
+/* 2. 确保消息文本元素也是深色 */
+.toast-elegant-content.style-glass .toast-elegant-message,
+.toast-elegant-content.style-solid .toast-elegant-message,
+.toast-elegant-content.style-outline .toast-elegant-message {
+    color: #374151 !important;
+}
+
+/* 3. 修复进度条在白色背景上看不清的问题，赋予其对应状态的颜色 */
+.toast-elegant-item.success .style-glass .toast-elegant-progress-bar,
+.toast-elegant-item.success .style-solid .toast-elegant-progress-bar,
+.toast-elegant-item.success .style-outline .toast-elegant-progress-bar {
+    background: #10b981;
+}
+
+.toast-elegant-item.error .style-glass .toast-elegant-progress-bar,
+.toast-elegant-item.error .style-solid .toast-elegant-progress-bar,
+.toast-elegant-item.error .style-outline .toast-elegant-progress-bar {
+    background: #ef4444;
+}
+
+.toast-elegant-item.warning .style-glass .toast-elegant-progress-bar,
+.toast-elegant-item.warning .style-solid .toast-elegant-progress-bar,
+.toast-elegant-item.warning .style-outline .toast-elegant-progress-bar {
+    background: #f59e0b;
+}
+
+.toast-elegant-item.info .style-glass .toast-elegant-progress-bar,
+.toast-elegant-item.info .style-solid .toast-elegant-progress-bar,
+.toast-elegant-item.info .style-outline .toast-elegant-progress-bar {
+    background: #3b82f6;
+}
+
+.toast-elegant-item.loading .style-glass .toast-elegant-progress-bar,
+.toast-elegant-item.loading .style-solid .toast-elegant-progress-bar,
+.toast-elegant-item.loading .style-outline .toast-elegant-progress-bar {
+    background: #8b5cf6;
 }
