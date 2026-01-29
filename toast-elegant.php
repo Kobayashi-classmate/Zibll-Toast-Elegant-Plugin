@@ -6,7 +6,7 @@
  * Version:      2.0.0
  * Author:       Kobayashi-classmate
  * Author URI:   https://github.com/Kobayashi-classmate/Zibll-Toast-Elegant-Plugin
- * License:      MIT license
+ * License:      GPLv2 or later
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:  Toast Elegant
  */
